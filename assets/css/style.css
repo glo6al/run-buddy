@@ -1,8 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  body {
+body {
     color: #283959;
     background-color: #f8fbff;
     font-family: Arial, Helvetica, sans-serif;
@@ -39,4 +40,69 @@ header nav ul li a {
     margin: 0 30px;
     font-weight: lighter;
     font-size: 22px;
-  }
+}
+footer {
+    background: #30343e;
+    width: 100%;
+    padding: 40px 35px;
+    color: #f8fbff;
+}
+footer h2 {
+    display: inline;
+    color: #f8fbff;
+    font-size: 30px;
+    margin: 0;
+}
+footer div {
+    float: right;
+    line-height: 1.5;
+    text-align: right;
+}
+footer a {
+    color: #f8fbff;
+}
+.hero {
+    background-image: url(../images/hero-bg.jpeg);
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+}
+section {
+    padding: 60px;
+}
+.hero-form {
+    background-color: #fcc945;
+    padding: 20px;
+    width: 500px;
+    color: #283959;
+    border: solid 3px #30343e;
+    position: absolute;
+    bottom: 300px;
+    right: 100px;
+}
+h3 {
+    margin: 0px;
+    font-size: 24px;
+}
+.hero-form p {
+    margin: 5px 0 15px 0;
+}
+.form-input {
+    border: 1px solid #30343e;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color:#f8fbff;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.hero-form label {
+    margin: 0 5px
+}
+.hero-form button {
+    color: #fcc945;
+    background-color: #30343e;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+}
