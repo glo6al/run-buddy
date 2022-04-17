@@ -13,6 +13,7 @@ header {
   background-color: #fcc945;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 header h1 {
   font-weight: bold;
@@ -33,13 +34,17 @@ header li {
   color: #283959;
   text-decoration: none;
 }
-header nav ul li {
-  display: inline;
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: none;
+  list-style: none;
 }
 header nav ul li a {
   margin: 0 30px;
   font-weight: lighter;
-  font-size: 22px;
+  font-size: 1.55vw;
 }
 footer {
   background: #30343e;
