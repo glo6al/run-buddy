@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --primary-color: #fcc954;
+  --secondary-color: #283959;
+  --tertiary-color: #30343e;
+  --quaternary-color: #f8fbff;
+}
 body {
   color: #283959;
   background-color: #f8fbff;
@@ -21,11 +27,12 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 header h1 {
   font-weight: bold;
   font-size: 36px;
-  color: #283959;
+  color: var(--secondary-color);
   margin: 0;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -39,7 +46,7 @@ header a {
 header li {
   font-size: 24px;
   font-weight: bold;
-  color: #283959;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 header nav ul {
@@ -56,22 +63,22 @@ header nav ul li a {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 header nav ul li a:hover {
-  background: #fcc945;
-  color: #283959;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   border-radius: 15px;
   text-shadow: none;
 }
 footer {
-  background: #30343e;
+  background: var(--tertiary-color);
   width: 100%;
   padding: 40px 35px;
-  color: #f8fbff;
+  color: var(--quaternary-color);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 footer h2 {
-  color: #f8fbff;
+  color: var(--quaternary-color);
   font-size: 30px;
   margin: 0;
 }
@@ -80,7 +87,7 @@ footer div {
   text-align: right;
 }
 footer a {
-  color: #f8fbff;
+  color: var(--quaternary-color);
 }
 .hero {
   background-image: url(../images/hero-bg.jpeg);
@@ -99,8 +106,8 @@ section {
 .hero-form {
   background-color: rgba(252, 201, 69, 0.8);
   padding: 20px;
-  color: #283959;
-  border: solid 3px #30343e;
+  color: var(--secondary-color);
+  border: solid 3px var(--tertiary-color);
   width: 40%;
   margin: 3.5%;
   border-radius: 15px;
@@ -113,7 +120,7 @@ h3 {
   margin: 5px 0 15px 0;
 }
 .form-input {
-  border: 1px solid #30343e;
+  border: 1px solid var(--tertiary-color);
   display: block;
   padding: 7px 15px;
   font-size: 16px;
@@ -130,7 +137,7 @@ h3 {
   margin: 0 5px;
 }
 .hero-form button {
-  color: #fcc945;
+  color: var(--primary-color);
   background-color: #30343e;
   border: none;
   padding: 10px 20px;
@@ -138,29 +145,84 @@ h3 {
   border-radius: 10px;
 }
 .hero-form button:hover {
-  background-color: #f8fbff;
-  color: #283959;
+  background-color: var(--quaternary-color);
+  color: var(--secondary-color);
 }
 .hero-cta {
   width: 35%;
   text-align: right;
   margin: 3.5%;
-  color: #fff;
+  color: var(--quaternary-color);
   font-size: 18px;
   line-height: 1.2;
 }
 .hero-cta h2 {
   font-style: italic;
   font-size: 55px;
-  color: #fce138;
+  color: var(--primary-color);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.checkbox-wrapper input,
+.radio-wrapper input {
+  opacity: 0;
+}
+.checkbox-wrapper label,
+.radio-wrapper label {
+  position: relative;
+  left: 10px;
+  margin: 10px;
+  line-height: 1.6;
+}
+.checkbox-wrapper label::before,
+.radio-wrapper label::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--tertiary-color);
+  position: absolute;
+  top: -4px;
+  left: -30px;
+}
+.radio-wrapper label::before {
+  border-radius: 50%;
+}
+.radio-wrapper label::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  position: absolute;
+  left: -29px;
+  top: -3px;
+  background-image: radial-gradient(circle, #2f508d, #30343e);
+}
+.checkbox-wrapper label::after {
+  content: "";
+  height: 6px;
+  width: 14px;
+  border-left: 2px solid var(--tertiary-color);
+  border-bottom: 2px solid var(--tertiary-color);
+  position: absolute;
+  left: -26px;
+  top: 1px;
+  transform: rotate(-58deg);
+}
+.checkbox-wrapper input + label::after,
+.radio-wrapper input + label::after {
+  content: none;
+}
+.checkbox-wrapper input:checked + label::after,
+.radio-wrapper input:checked + label::after {
+  content: "";
 }
 .intro p {
   font-size: 24px;
   text-align: center;
 }
 .steps {
-  background-color: #fcc945;
+  background-color: var(--primary-color);
 }
 .step {
   margin: 50px auto;
@@ -170,7 +232,7 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #30343e;
+  border-bottom: 1px solid var(--tertiary-color);
 }
 .step:last-child {
   border-bottom: none;
@@ -196,18 +258,18 @@ h3 {
 .step-text h4 {
   font-size: 26px;
   line-height: 1.5;
-  color: #283959;
+  color: var(--secondary-color);
 }
 .step-text {
   flex: 12;
 }
 .step-text p {
   font-size: 18px;
-  color: #283959;
+  color: var(--secondary-color);
 }
 .section-title {
   font-size: 48px;
-  color: #283959;
+  color: var(--secondary-color);
   border-bottom: 3px solid;
   padding-bottom: 20px;
   text-align: center;
@@ -215,10 +277,10 @@ h3 {
   width: 50%;
 }
 .primary-border {
-  border-color: #30343e;
+  border-color: var(--tertiary-color);
 }
 .secondary-border {
-  border-color: #30343e;
+  border-color: var(--tertiary-color);
 }
 .trainers {
   width: 100%;
@@ -229,8 +291,8 @@ h3 {
 }
 .trainer {
   margin: 20px;
-  background: #fcc945;
-  color: #283959;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   flex: 1;
 }
 .trainer img {
@@ -258,7 +320,7 @@ h3 {
   font-size: 17px;
 }
 .contact {
-  background: #fcc945;
+  background: var(--primary-color);
 }
 .contact-info {
   display: flex;
@@ -270,16 +332,16 @@ h3 {
   margin: 15px;
 }
 .contact-info div {
-  color: white;
+  color: var(--quaternary-color);
 }
 .contact h2 {
-  color: #283959;
+  color: var(--secondary-color);
 }
 .contact-info iframe {
   height: 400px;
 }
 .contact-info h3 {
-  color: #283959;
+  color: var(--secondary-color);
   font-size: 32px;
 }
 .contact-info address {
@@ -293,15 +355,15 @@ h3 {
   font-size: 16px;
 }
 .contact-info a {
-  color: #283959;
+  color: var(--secondary-color);
 }
 .contact-form input,
 .contact-form textarea {
-  border: 1px solid #30343e;
+  border: 1px solid var(--tertiary-color);
   display: block;
   padding: 7px 15px;
   font-size: 16px;
-  color: #283959;
+  color: var(--secondary-color);
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
@@ -316,16 +378,16 @@ h3 {
 .contact-form button {
   width: 100%;
   border: none;
-  background: #283959;
-  color: #f8fbff;
+  background: var(--secondary-color);
+  color: var(--quaternary-color);
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
   border-radius: 10px;
 }
 .contact-form button:hover {
-  color: #283959;
-  background: #f8fbff;
+  color: var(--secondary-color);
+  background: var(--quaternary-color);
 }
 .flex-row {
   display: flexbox;
